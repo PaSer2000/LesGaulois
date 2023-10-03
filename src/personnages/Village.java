@@ -21,25 +21,22 @@ public class Village {
 	
 	// TP2 ---------------------------------------------------------------------------------------------
 	
-	private int nbVillageois ;
-	nbVillageois = 0 ;
+	private int nbVillageois = 0 ;
 	
-	// création tableau villageois
+	// creation tableau villageois
 	String[] villageois = new String[nbVillageoisMaximum] ;
 	
 
-	// méthode ajouterHabitant
+	// methode ajouterHabitant
 	public int ajouterHabitant(String gaulois) {
 		villageois[nbVillageois] = gaulois;
 		nbVillageois += 1;
+		return nbVillageois;
 	}
 	
-	// méthode trouverHabitant
+	// methode trouverHabitant
 	public int trouverHabitant(int numero) {
 		return reference;
-	
 	}
 	
-	
-
 }

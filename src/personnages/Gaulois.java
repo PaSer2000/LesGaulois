@@ -23,9 +23,16 @@ public class Gaulois {
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la m‚choire de " + romain.getNom());
-		romain.recevoirCoup(force / 3);
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		romain.recevoirCoup((force / 3) * effetPotion);
 	}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion = forcePotion;
+		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois d√©cupl√©e.");
+	}
+	
+	
 	
 	@Override
 	public String toString() {
@@ -33,36 +40,32 @@ public class Gaulois {
 	}
 
 	public static void main(String[] args) {
-		asterix = new asterix();
 		
+		Gaulois asterix = new Gaulois("Ast√©rix", 8);
+		Romain minus = new Romain("Minus", 6);		
+		
+//		System.out.println(asterix.nom);
+		System.out.println(asterix);
+//		System.out.println(asterix.prendreParole());
+		asterix.parler("Salut!");
+		asterix.frapper(minus);
+		
+		asterix.boirePotion(5);	
 	}	
-
-	System.out.println(asterix);
-
 }
 	
 	
 
+// Options qui ont ete supprimes 	
 	
+//	public int getEffetPotion() {
+//		return effetPotion;
+//	}
 	
-	
-	
-	
-	
-	
-	
-	// Options qui ont ÈtÈ supprimÈs 	
-	
-	public int getEffetPotion() {
-		return effetPotion;
-	}
-	
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+//	public void setNom(String nom) {
+//		this.nom = nom;
+//	}
 
-	public void setEffetPotion(int effetPotion) {
-		this.effetPotion = effetPotion;
-	}
-
-}
+//	public void setEffetPotion(int effetPotion) {
+//		this.effetPotion = effetPotion;
+//	}
