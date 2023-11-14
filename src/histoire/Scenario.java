@@ -4,7 +4,7 @@ import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-import villagegaulois.Musee;
+//import villagegaulois.Musee;
 
 public class Scenario {
 
@@ -42,11 +42,11 @@ public class Scenario {
 		minus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(minus);
-		} while (minus.force > 0);
+		} while (minus.getForce() > 0);
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(milexcus);
-		} while (milexcus.force > 0);
+		} while (milexcus.getForce() > 0);
 		
 //		Partie a decommenter
 		

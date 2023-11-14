@@ -18,6 +18,10 @@ public class Romain {
 		return nom;
 	}
 	
+	public int getForce() {
+		return force;
+	}
+	
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "<<" + texte + ">>");
 	}
@@ -26,6 +30,7 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 	
+//	MA METHODE RECEVOIR COUP
 //	public void recevoirCoup(int forceCoup) {
 //		assert force > 0 : "La force d'un Romain doit être toujous positive";
 //		force -= forceCoup;
@@ -60,7 +65,7 @@ public class Romain {
 	}
 	
 	private int calculResistanceEquipement(int forceCoup) {
-		String texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup;
+		String texte = "Ma force est de " + this.force + ", et la force du coup est de " + forceCoup + ".";
 		int resistanceEquipement = 0;
 		if (nbEquipement != 0) {
 			texte = texte + "\nMais heureusement, grace à mon équipement sa force est diminué de ";
@@ -75,13 +80,21 @@ public class Romain {
 		texte += resistanceEquipement + "!";
 		}
 		parler(texte);
-		forceCoup -= resistanceEquipement;
+		
+		if (resistanceEquipement > forceCoup) {
+			System.out.println("L'équipement a réussi a bloquer complétement la force du coup!");
+			forceCoup = 0;
+		} else {
+			forceCoup -= resistanceEquipement;
+		}
+		
 		return forceCoup;
 	}
 	
 	private Equipement[] ejecterEquipement() {
+		System.out.println("L'équipement de " + nom + " s'envole sous la force du coup.");
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
-		System.out.println("L'équipement de " + nom + "s'envole sous la force du coup.");
+		
 		int nbEquipementEjecte = 0;
 		for (int i = 0; i < nbEquipement; i++) {
 			if (equipements[i] != null) {
